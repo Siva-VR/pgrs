@@ -1,0 +1,247 @@
+/* ...existing code... */
+/* File Upload component styles - matches site theme and is responsive */
+
+/* Page wrapper */
+.fileupload-page {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 20px;
+  background: linear-gradient(180deg, #fffaf8 0%, #ffffff 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2e2a28;
+}
+
+/* Card */
+.fileupload-card {
+  width: 100%;
+  max-width: 920px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.06);
+  padding: 28px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  display: grid;
+  gap: 14px;
+}
+
+/* Title */
+.fu-title {
+  margin: 0;
+  font-size: 22px;
+  color: #2b2b2b;
+  font-weight: 700;
+}
+
+/* Form layout */
+.fu-form {
+  display: grid;
+  gap: 14px;
+  align-items: start;
+}
+
+.fu-row {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels and small text */
+.fu-label {
+  font-size: 13px;
+  color: #4b4440;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* Inputs */
+.fu-input,
+.fu-textarea,
+.fu-file {
+  font-size: 14px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #e6e2df;
+  background: #fff;
+  color: #2e2a28;
+  transition: box-shadow .18s ease, border-color .18s ease;
+}
+
+.fu-textarea { resize: vertical; min-height: 92px; }
+
+.fu-input:focus,
+.fu-textarea:focus,
+.fu-file:focus {
+  outline: none;
+  border-color: rgba(217,69,34,0.9);
+  box-shadow: 0 6px 18px rgba(217,69,34,0.06);
+}
+
+/* Note under file input */
+.fu-note {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #7a645b;
+}
+
+/* Previews area */
+.fu-previews {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.fu-preview {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.04);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+  min-width: 240px;
+}
+
+.fu-thumb,
+.fu-file-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: cover;
+  background: #f6f3f0;
+  color: #d94522;
+  font-weight: 700;
+}
+
+/* File metadata */
+.fu-file-meta { min-width: 160px; }
+
+.fu-fname {
+  font-size: 14px;
+  color: #2b2b2b;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fu-fsize {
+  font-size: 12px;
+  color: #7a645b;
+  margin-top: 4px;
+}
+
+/* Remove file button */
+.fu-remove {
+  margin-left: auto;
+  border: none;
+  background: transparent;
+  color: #d94522;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+
+/* Actions */
+.fu-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+  align-items: center;
+}
+
+.fu-submit {
+  background: linear-gradient(135deg, #d94522 0%, #b83a1c 100%);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .16s ease, box-shadow .16s ease;
+  box-shadow: 0 8px 24px rgba(217,69,34,0.18);
+}
+
+.fu-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(217,69,34,0.22);
+}
+
+.fu-cancel {
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.06);
+  padding: 10px 16px;
+  border-radius: 8px;
+  color: #4b4440;
+  cursor: pointer;
+}
+
+/* Progress bar */
+.fu-progress-wrap {
+  position: relative;
+  margin-top: 14px;
+  height: 10px;
+  background: #f3efec;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.fu-progress {
+  height: 100%;
+  background: linear-gradient(90deg, rgba(217,69,34,0.95), rgba(184,58,28,0.95));
+  width: 0%;
+  transition: width .25s linear;
+}
+
+.fu-progress-text {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #6b5b54;
+}
+
+/* Messages */
+.fu-error {
+  padding: 10px 12px;
+  background: #fff5f3;
+  color: #b83a1c;
+  border-left: 4px solid #b83a1c;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.fu-success {
+  padding: 10px 12px;
+  background: #eef9f0;
+  color: #1f7a3a;
+  border-left: 4px solid #1f7a3a;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+/* Small helper text */
+.form-help {
+  font-size: 12px;
+  color: #7a645b;
+}
+
+/* Responsive */
+@media (max-width: 920px) {
+  .fileupload-card { padding: 20px; }
+  .fu-preview { min-width: 200px; }
+}
+
+@media (max-width: 720px) {
+  .fileupload-card { padding: 18px; }
+  .fu-previews { gap: 8px; }
+  .fu-preview { flex-direction: column; align-items: flex-start; min-width: 100%; }
+  .fu-file-meta { min-width: 140px; }
+  .fu-actions { flex-direction: column; }
+  .fu-submit, .fu-cancel { width: 100%; }
+}
+
