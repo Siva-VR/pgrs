@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import './signup.css'
 import { useLanguage } from '../../contexts/LanguageContext'
+import { Link } from 'react-router-dom'
 
 export default function SignUp({ onSignUp }) {
   const { t } = useLanguage()
@@ -136,7 +137,7 @@ export default function SignUp({ onSignUp }) {
         </button>
 
         <p className="login-link">
-          {t.signup.haveAccount} <a href="/login">{t.signup.loginLink}</a>
+          {t.signup.haveAccount} <Link to="/login">{t.signup.loginLink}</Link>
         </p>
       </form>
     </div>

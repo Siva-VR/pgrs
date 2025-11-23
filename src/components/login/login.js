@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './login.css';
 import { useLanguage } from '../../contexts/LanguageContext';
 
@@ -68,7 +68,7 @@ export default function Login({ onLogin }) {
         </button>
 
         <p className="login-link">
-          {t.login.noAccount} <a href="/signup">{t.login.registerLink}</a>
+          {t.login.noAccount} <Link to="/signup">{t.login.registerLink}</Link>
         </p>
       </form>
     </div>

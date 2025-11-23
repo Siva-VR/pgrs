@@ -68,37 +68,70 @@ const Home = () => {
         💬
       </button>
 
+      {/* Chatbot Button */}
+      <button 
+        className="chatbot-toggle"
+        onClick={() => setShowChatbot(!showChatbot)}
+        aria-label="Open PGRS Assistant"
+      >
+        💬
+      </button>
+
       {/* Chatbot Widget */}
       {showChatbot && (
         <div className="chatbot-widget">
           <div className="chatbot-header">
-            <div className="chatbot-avatar">👨</div>
-            <span className="chatbot-name">AI.g</span>
+            <div className="chatbot-avatar">🤖</div>
+            <span className="chatbot-name">PGRS Assistant</span>
             <button 
               className="chatbot-close"
               onClick={() => setShowChatbot(false)}
+              aria-label="Close chat"
             >
               ✕
             </button>
           </div>
           <div className="chatbot-body">
             <div className="chatbot-message">
-              <p>Greetings! I'm AI.g</p>
-              <p>I'm here to answer any questions you may have about travelling with Air India. Talk to me in English, French, German, or Hindi.</p>
-              <p>Choose one of these popular topics or type your question below. You can also chat with me on WhatsApp: <a href="#">+91 96670 34444</a></p>
+              <p><strong>Welcome to PGRS!</strong></p>
+              <p>I'm here to help you with the Public Grievance Redressal System. You can talk to me in English, Hindi, Telugu, or any regional language.</p>
+              <p>Choose one of these options or type your question below:</p>
             </div>
             <div className="chatbot-options">
-              <button className="chatbot-option">🎒 Baggage Allowance</button>
-              <button className="chatbot-option">✈️ Booking</button>
-              <button className="chatbot-option">✓ Check In</button>
-              <button className="chatbot-option">✈️ Flight Status</button>
-              <button className="chatbot-option">💰 Refund</button>
-              <button className="chatbot-option">🗺️ Travel Guide</button>
+              <button className="chatbot-option">
+                <span className="option-icon">📝</span>
+                Raise Grievance
+              </button>
+              <button className="chatbot-option">
+                <span className="option-icon">🔍</span>
+                Ticket Status
+              </button>
+              <button className="chatbot-option">
+                <span className="option-icon">📊</span>
+                Dashboards
+              </button>
+              <button className="chatbot-option">
+                <span className="option-icon">💬</span>
+                Feedback
+              </button>
+              <button className="chatbot-option">
+                <span className="option-icon">📞</span>
+                Contact Us
+              </button>
+              <button className="chatbot-option">
+                <span className="option-icon">❓</span>
+                Help & FAQ
+              </button>
             </div>
             <div className="skill-spotlight">
               <span className="spotlight-icon">✨</span>
-              <span>Skill Spotlight</span>
-              <p>Do you know I can help you to...</p>
+              <span className="spotlight-text">Quick Tip</span>
+              <p>You can track your grievance status anytime using your ticket number!</p>
+            </div>
+            <div className="contact-box">
+              <p className="contact-title">📧 Need immediate help?</p>
+              <p className="contact-detail">Call: <strong>1800-XXX-XXXX</strong></p>
+              <p className="contact-detail">Email: <strong>support@pgrs.gov.in</strong></p>
             </div>
           </div>
           <div className="chatbot-footer">
@@ -107,7 +140,7 @@ const Home = () => {
               placeholder="Type your question here..."
               className="chatbot-input"
             />
-            <button className="chatbot-send">➤</button>
+            <button className="chatbot-send" aria-label="Send message">➤</button>
           </div>
         </div>
       )}
